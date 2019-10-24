@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- font awsome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/css/ol.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/build/ol.js"></script>
     <style>
         #country{
             width: 300px;
@@ -15,11 +18,15 @@
        .fa-heart{
            color:red;
        }
+       .map {
+        height: 400px;
+        width: 100%;
+      }
     </style>
     <title>Country-App</title>
 </head>
 <body>
-    <div class="container bg-light border shadow p-5">
+    <div class="container mt-5 bg-light border shadow p-5">
         
             <h2><i class="fas fa-globe-europe mx-2"></i>Country App</h2>
             <p>This is an application that displays country information</p>
@@ -34,7 +41,7 @@
     <div class="container mt-4 shadow border">
         <div class="row">
             <div class="col-9">
-                Map
+                    <div id="map" class="map"></div>
             </div>
             <div class="col bg-dark text-white p-3">
                 <p>Name: Greece</p>
@@ -44,5 +51,20 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        var map = new ol.Map({
+          target: 'map',
+          layers: [
+            new ol.layer.Tile({
+              source: new ol.source.OSM()
+            })
+          ],
+          view: new ol.View({
+            center: ol.proj.fromLonLat([37.41, 8.82]),
+            zoom: 4
+          })
+        });
+      </script>
 </body>
 </html>
