@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/css/ol.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/build/ol.js"></script>
-    
+    <link rel="stylesheet" href="style.css">
     <title>Country-App</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
             <p>This is an application that displays country information</p>
             <hr>
             <input size="40" class="p-2" type="text" id="country" placeholder="Enter country name, e.g. greece">
-            <button class="btn btn-primary">Get Info</button>
+            <button id="get-info-btn" class="btn btn-primary">Get Info</button>
             <hr>
             <p>Created with <i class="fas fa-heart"></i> by the CB8 Java Part Class</p>
     </div>
@@ -33,10 +33,10 @@
                     <div id="map" class="map"></div>
             </div>
             <div class="col bg-dark text-white p-3">
-                <p>Name: Greece</p>
-                <p>Capital: Athens</p>
-                <p>Population: 10,000,000</p>
-                <img src="" alt="">
+                <p id="name">Name:</p>
+                <p id="capital">Capital:</p>
+                <p id="population">Population:</p>
+                <img class= "img-fluid" id="image">
             </div>
         </div>
     </div>
